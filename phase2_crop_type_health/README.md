@@ -1,6 +1,6 @@
-# Phase 2: Plot-level crop type, health index and yield to date
+# Phase 2 — Plot-level Crop Type, Health Index and Yield to Date
 
-Phase 2 produces three values for each of the 966 farm plots in Sokhda village (447.5 ha), using four Capella X-band HH SLC scenes:
+Phase 2 uses four Capella X-band HH SLC scenes to produce three values for each of the 966 farm plots in Sokhda village (447.5 ha):
 
 - a crop type;
 - a health index from 0 to 100;
@@ -10,46 +10,44 @@ Its crop map is the crop input of Phase 3.
 
 | | |
 |:--|:--|
-| Paper section | 3.4.1 Crop type: area-constrained assignment |
-| Competition | ANRF AISEHack 2.0, Round 2: <https://www.kaggle.com/competitions/anrf-aise-hack-2-0-round-2-sar-crop-health-yield-estimation> |
-| Deliverable | `results/submission.csv` (966 rows), md5 `89b0e4e2aef63ace4989fc0a44590ee5` |
-| Reproduces | byte for byte, from the raw SLCs (about 2 minutes) or from the shipped feature store (seconds) |
-| Needs | the Phase 2 competition download; only its shapefiles for the quick route |
+| **Paper section** | Plot-level crop type mapping |
+| **Competition** | [ANRF AISEHack 2.0, Round 2](https://www.kaggle.com/competitions/anrf-aise-hack-2-0-round-2-sar-crop-health-yield-estimation) |
+| **Deliverable** | `results/submission.csv` (966 rows), md5 `89b0e4e2aef63ace4989fc0a44590ee5` |
+| **Requirements** | Phase 2 competition download; only its shapefiles for the quick route |
 
 ---
 
 ## Contents
 
 1. [Task](#1-task)
-2. [Data and inputs](#2-data-and-inputs)
+2. [Data and Inputs](#2-data-and-inputs)
 3. [Method](#3-method)
 4. [Results](#4-results)
 5. [Validation](#5-validation)
-6. [Folder contents](#6-folder-contents)
-7. [Script reference](#7-script-reference)
-8. [Reproducing the result](#8-reproducing-the-result)
-9. [Verification](#9-verification)
-10. [Limitations](#10-limitations)
-11. [What is deliberately not included](#11-what-is-deliberately-not-included)
+6. [Repository Contents](#6-repository-contents)
+7. [Usage](#7-usage)
+8. [Script Reference](#8-script-reference)
+9. [Limitations](#9-limitations)
+10. [Scope of this Release](#10-scope-of-this-release)
 
 ---
 
 ## 1. Task
 
-For each plot (`farm_id` 1–966, the `FID` of the competition shapefile) the deliverable gives:
+For each plot (`farm_id` 1–966, the `FID` of the competition shapefile):
 
 | Column | Meaning |
 |:--|:--|
-| `village_id`, `farm_id` | identifiers |
-| `crop_type` | one of Rice, Cotton, Maize, Bajra, Groundnut |
+| `village_id`, `farm_id` | Identifiers |
+| `crop_type` | Rice, Cotton, Maize, Bajra or Groundnut |
 | `health_index` | 0–100 |
-| `yield_estimate_to_date` | t/ha: the yield potential reached by the last acquisition, explicitly **not** a final harvest forecast |
+| `yield_estimate_to_date` | t/ha reached by the last acquisition; not a final harvest forecast |
 
-No ground truth was given for crop, health or yield.
+No ground truth was provided for crop type, health or yield.
 
-## 2. Data and inputs
+## 2. Data and Inputs
 
-**Capella scenes.** All four are left-looking, ascending Stripmap HH SLC scenes, annotated `beta_nought`. Each comes with 225 ground control points.
+**Capella scenes.** All are left-looking, ascending Stripmap HH SLC scenes, annotated `beta_nought`, each with 225 ground control points.
 
 | Date | Local time (IST) | Centre incidence | Scale factor | NESZ peak (dB) |
 |:--|:--|--:|--:|--:|
@@ -58,78 +56,79 @@ No ground truth was given for crop, health or yield.
 | 2025-08-14 | 08:41 | 28.692° | 0.00198903 | −27.97 |
 | 2025-10-13 | 07:56 | 31.528° | 0.00136443 | −27.35 |
 
-The download's `20250619` folder also contains a byte-identical copy of the 6 June scene. `src/common.py` requires the date to appear in both the folder name and the file name, so that copy is never read as 19 June.
+The download's `20250619` folder also contains a copy of the 6 June scene. `src/common.py` selects a scene only when the date appears in both the folder name and the file name.
 
-**Declared inputs** (in `data_aux/`, provenance in `data_aux/SOURCES.md`):
+**Declared inputs** (`data_aux/`; provenance in `data_aux/SOURCES.md`):
 
 | File | Role |
 |:--|:--|
-| `sokhda_phase1_crop_shares.csv` | Phase 1 crop shares for Sokhda: Cotton 43.0%, Groundnut 31.0%, Rice 10.6%, Bajra 9.4%, Maize 6.0%. Used only as the area constraint on the crop map. |
-| `vadodara_apy.csv` | Vadodara district yield 2022–23 (Directorate of Agriculture, Gujarat). Sets the yield level. |
+| `sokhda_phase1_crop_shares.csv` | Phase 1 crop shares for Sokhda (Cotton 43.0%, Groundnut 31.0%, Rice 10.6%, Bajra 9.4%, Maize 6.0%); used only as the area constraint on the crop map |
+| `vadodara_apy.csv` | Vadodara district yield 2022–23 (Directorate of Agriculture, Gujarat); sets the yield level |
 
-**Witnesses, never inputs.** These are Sentinel-2 L2A (same day as the 13 October Capella scene, 0.003% cloud), Sentinel-1 RTC (single date, plus a 10-scene season integral from 12 June to 10 October) and NASA POWER rainfall. They are fetched by the scripts, and no value from them enters `submission.csv`.
+**Independent check data,** never model inputs:
+
+- Sentinel-2 L2A, acquired the same day as the 13 October Capella scene;
+- Sentinel-1 RTC, a single date plus a 10-scene season integral from 12 June to 10 October;
+- NASA POWER rainfall.
 
 ## 3. Method
 
-The principle is dasymetric mapping: a quantity known only in aggregate is held fixed, and the SAR supplies the variation inside it.
+Quantities known only in aggregate are held fixed, and the SAR supplies the variation within them.
 
-### 3.1 Preprocessing (`prep_r2.py`)
+### 3.1 Preprocessing — `prep_r2.py`
 
-- **Radiometry:** β⁰ = scale_factor · |z|², then γ⁰ = β⁰ · tan θ, where θ is a per-pixel incidence angle computed from the orbit state vectors. It matches the vendor's centre angle to within 0.006°.
-- **Geocoding:** from slant range to EPSG:32643, using the 225 control points. Averaging power onto the output grid performs the multi-look in the same step. Two grids are produced: 5 m for per-plot statistics and 2 m for texture.
-- **Calibration note:** Phase 3 found that the scale factor must be **squared** and corrected it. Phase 2 is kept exactly as submitted, so that its outputs reproduce byte for byte. The error shifts each scene by a constant in dB. That cancels in ranks within a date, but not in the fixed dB thresholds of the rice flooding term below. The paper describes the corrected chain of Phase 3.
+- **Radiometry:** β⁰ = scale_factor · |z|², then γ⁰ = β⁰ · tan θ, where θ is a per-pixel incidence angle computed from the orbit state vectors. θ agrees with the vendor's centre angle to within 0.006°.
+- **Geocoding:** slant range to EPSG:32643 using the scene's control points. Averaging power onto the output grid performs the multi-look. Two grids are produced: 5 m for per-plot statistics and 2 m for texture.
+- **Calibration note:** Phase 3 established that the scale factor must be squared. Phase 2 is retained as submitted, so that its outputs reproduce exactly. The difference shifts each scene by a constant in dB. That cancels in within-date ranks, but not in the fixed dB thresholds of the rice flooding term.
 
-### 3.2 Per-plot features (`farm_stats.py`, `sublook.py`, `wcm.py`)
+### 3.2 Per-plot features — `farm_stats.py`, `sublook.py`, `wcm.py`
 
-- **Erosion:** plots are eroded before sampling, so that no pixel mixes two fields. The fallback ladder is erode, then no buffer, then the centroid.
+- **Erosion:** plots are eroded before sampling, with a fallback from eroded polygon to full polygon to centroid.
 - **Features** (61 columns in `results/farm_features.csv`):
-  - per date: γ⁰ in dB and in linear units, within-plot CV, K-distribution texture, GLCM entropy and a size-corrected GLCM residual, incidence angle, pixel count;
-  - across dates: differences (Aug − 19 Jun, Oct − Aug, Oct − Jun), referenced levels, the June baseline, temporal CV and range, and the season integral;
-  - `sublook.py` adds sub-look coherence per date. `wcm.py` adds Water Cloud Model canopy water content per date, an inversion status flag per date, and a per-plot calibration constant (`wcm_k_db`). These are reported but not used in the index.
-- **Coverage:** 966 of 966 plots have a row. 895 are measured directly, 52 are filled from same-crop neighbours (missing coverage clusters in the north-west), and 19 are flagged for radio-frequency interference. The source of every row is recorded in `results/d4_debug.csv`.
+  - **per date:** γ⁰ in dB and linear units, within-plot CV, K-distribution texture, GLCM entropy and a size-corrected GLCM residual, incidence angle, pixel count;
+  - **across dates:** differences (Aug − 19 Jun, Oct − Aug, Oct − Jun), referenced levels, the June baseline, temporal CV and range, the season integral;
+  - **reported but not used in the index:**
+    - sub-look coherence per date (`sublook.py`);
+    - Water Cloud Model canopy water content and an inversion status flag per date, plus a per-plot calibration constant (`wcm.py`).
+- **Coverage:** all 966 plots have a row. 895 are measured directly, 52 are filled from same-crop neighbours, and 19 are flagged for radio-frequency interference. Provenance is recorded in `results/d4_debug.csv`.
 
-### 3.3 Crop type (`d4_submission.py`: `crop_evidence`, `assign_crop`, `fit_prior`)
+### 3.3 Crop type — `d4_submission.py` (`crop_evidence`, `assign_crop`, `fit_prior`)
 
-1. **Evidence per crop:** a weighted sum of robust z-scores of SAR features, each with a physical reason:
+1. **Evidence per crop:** a weighted sum of robust z-scores of SAR features:
 
-   | Crop | Main evidence | Mechanism |
+   | Crop | Main evidence | Interpretation |
    |:--|:--|:--|
-   | Rice | flooding term: the 19 Jun − 6 Jun rise mapped to [0, 1] between 3 and 15 dB (weight 2.2); low Aug − Jun change | standing water at transplanting gives strong double bounce |
-   | Cotton | October and August levels, growth, texture; no flooding | tall woody canopy, still standing in October |
-   | Groundnut | October level high, August level and texture low | low closed canopy on lighter soils |
-   | Maize | August level, growth, senescence; October low | tall at the August peak, bare by October |
-   | Bajra | weak, mostly negative terms | no usable signature; placed mainly by the constraint |
+   | Rice | Flooding term: rise from 6 to 19 June, mapped to [0, 1] between 3 and 15 dB (weight 2.2); low Aug − Jun change | Standing water at transplanting |
+   | Cotton | October and August levels, growth, texture; no flooding | Tall canopy still standing in October |
+   | Groundnut | High October level; low August level and texture | Low closed canopy on lighter soils |
+   | Maize | August level, growth, senescence; low October level | Tall at the August peak, bare by October |
+   | Bajra | Weak, mostly negative terms | No reliable signature; placed mainly by the constraint |
 
-   The Aug − Jun X-band term is weighted by its effect size (ρ = −0.555 for rice), as measured against the Phase 1 village estimate on the 28 villages other than Sokhda.
-2. **Probabilities:** a softmax at temperature 1 turns the evidence into class probabilities.
-3. **Constraint:** a per-class bias on the log-probabilities is updated, `b ← b + 0.35 · clip(log(π/s), −2, 2)`, until the **area-weighted** argmax shares match the Phase 1 shares to within 0.005. This moves the decision boundary between classes without changing the order of plots within a class.
-4. **Labels:** argmax only at the end.
+   The Aug − Jun X-band term is weighted by its effect size (ρ = −0.555 for rice), measured against the Phase 1 estimate on the 28 villages other than Sokhda.
+2. **Probabilities:** a softmax at temperature 1 converts the evidence into class probabilities.
+3. **Area constraint:** a per-class bias is updated, `b ← b + 0.35 · clip(log(π/s), −2, 2)`, until the area-weighted argmax shares match the Phase 1 shares to within 0.005. The order of plots within a class is unchanged.
+4. **Labels:** argmax is taken last.
 
-Why constrain at all: in Phase 1, free per-pixel classification scored about five times worse than predicting zeros.
-
-### 3.4 Health index (`d4_submission.py`: `health_index`)
-
-Four families are robust z-scored across plots:
+### 3.4 Health index — `d4_submission.py` (`health_index`)
 
 | Family | Measurement | Weight |
 |:--|:--|--:|
 | `level` | γ⁰ on 14 August (peak canopy) | 0.189 |
 | `growth` | 14 Aug − 19 Jun, the only pair with matched geometry (0.076° apart) | 0.283 |
 | `uniform` | −(within-plot CV) | 0.301 |
-| `persist` | season integral | 0.228 |
+| `persist` | Season integral | 0.228 |
 
-- **Weights:** w_k ∝ 1 / Σ_j |ρ(k, j)|. They are fixed by the correlations between families and never fitted to any witness.
-- **Scoring within crop:** each plot is scored against its own crop's median, so 50 means typical for that crop. The score is 100 · Φ((S − median) / (1.4826 · MAD)), using the median and median absolute deviation of the plot's crop.
+- **Weights:** w_k ∝ 1 / Σ_j |ρ(k, j)|, set by the correlations between families and never fitted to a check dataset.
+- **Score:** 100 · Φ((S − median) / (1.4826 · MAD)), computed within each crop.
 
-### 3.5 Yield to date (`d4_submission.py`: `yield_to_date`)
+### 3.5 Yield to date — `d4_submission.py` (`yield_to_date`)
 
 ```
-yield_to_date [t/ha] = district yield (level) × completion (per crop) × accumulation (per plot, from SAR)
+yield_to_date [t/ha] = district yield × completion (per crop) × accumulation (per plot, from SAR)
 ```
 
 - **Completion by 13 October:** Cotton 0.45, Groundnut 0.75, Rice, Maize and Bajra 0.95.
-- **Direction of the completion term:** it was corrected after Sentinel-2 contradicted the original assumption that harvested fields brighten. This happened in all five crops.
-- **Totals:** village and crop totals are Σ yield × area, never a mean of rates.
+- **Totals:** village and crop totals are Σ yield × area.
 
 ## 4. Results
 
@@ -141,76 +140,46 @@ yield_to_date [t/ha] = district yield (level) × completion (per crop) × accumu
 | Rice | 86 | 50.0 | 1.635 |
 | Maize | 55 | 50.0 | 2.181 |
 
-- **Village total:** 447.5 ha and 594.9 t to 13 October.
-- **Health medians:** scores are centred on 50 within each crop by construction. Cotton reads 51.9 because 50 of its plots are filled from same-crop neighbours after scoring and 4 are flagged for interference.
-- **Cotton:** it reads low because it is only about 45% picked by 13 October and is reported as lint.
+- **Village total:** 594.9 t over 447.5 ha to 13 October.
+- **Health scores:** centred on 50 within each crop. Cotton's median is 51.9 because 50 of its plots are filled from neighbours after scoring and 4 are flagged for interference.
+- **Cotton yield:** it reads low because it is reported as lint and is about 45% picked by 13 October.
 
 ## 5. Validation
 
-All values are recomputed on the final crop map.
-
 | Test | Result |
 |:--|:--|
-| Crop classes separate on Sentinel-2 NDVI (13 Oct) | Kruskal–Wallis p = 9.3 × 10⁻³⁵ |
-| Crop classes separate on Sentinel-1 VH | p = 2.7 × 10⁻²⁰ |
-| Crop order on 13 Oct | cotton highest (still standing), maize lowest (harvested), on both witnesses |
-| Health index spatial structure | Moran's I = 0.096 against a 199-permutation null |
-| Season-integral term vs the Sentinel-1 season witness | cotton ρ = +0.305 (p = 5 × 10⁻¹⁰), rice +0.290 (p = 0.007), not significant for maize (+0.058, p = 0.68) and groundnut (−0.087, p = 0.20), **bajra −0.219 (p = 0.008)** |
-| Plot labels vs an independent Sentinel-1 + Sentinel-2 map | **Cohen's κ = 0.112** (reported failure) |
-| Repeat-pass coherence, 19 Jun × 14 Aug | at the noise floor; the stable-target control did not clear its bias floor (reported failure) |
+| Crop classes on Sentinel-2 NDVI (13 Oct) | Kruskal–Wallis p = 9.3 × 10⁻³⁵ |
+| Crop classes on Sentinel-1 VH | p = 2.7 × 10⁻²⁰ |
+| Crop order on 13 Oct | Cotton highest and maize lowest on both sensors |
+| Spatial structure of the health index | Moran's I = 0.096 (199-permutation null) |
+| Season-integral term vs Sentinel-1 season integral | Cotton ρ = +0.305 (p = 5 × 10⁻¹⁰); rice +0.290 (p = 0.007); maize +0.058 (p = 0.68) and groundnut −0.087 (p = 0.20) not significant; bajra −0.219 (p = 0.008) |
+| Plot labels vs an independent Sentinel-1 + Sentinel-2 map | Cohen's κ = 0.112 |
+| Repeat-pass coherence, 19 Jun × 14 Aug | At the noise floor; the stable-target control did not clear its bias floor |
 
-## 6. Folder contents
+## 6. Repository Contents
 
 ```
 phase2_crop_type_health/
 ├── README.md
-├── src/                          21 scripts (Section 7)
-├── notebooks/I9_pipeline.ipynb   end-to-end notebook; its last cell asserts the submission
+├── src/                          21 scripts (Section 8)
+├── notebooks/I9_pipeline.ipynb   end-to-end notebook; its last cell checks the submission
 ├── data_aux/
 │   ├── sokhda_phase1_crop_shares.csv
 │   ├── vadodara_apy.csv
 │   └── SOURCES.md
 └── results/
-    ├── submission.csv            the deliverable
-    ├── farm_features.csv         per-plot feature store, 966 × 61
-    ├── d4_debug.csv              provenance, evidence and five-class posterior per plot
-    └── tables/                   12 tables: scene metadata, witnesses, context, coherence,
-                                  independent crop map, comparison clustering, X-band vs optical
+    ├── submission.csv            deliverable
+    ├── farm_features.csv         per-plot features (966 × 61)
+    ├── d4_debug.csv              provenance, evidence and class probabilities per plot
+    └── tables/                   12 tables: scene metadata, independent checks, context,
+                                  coherence, independent crop map, comparison clustering
 ```
 
-## 7. Script reference
+## 7. Usage
 
-"Data" means the Phase 2 competition download. "Internet" means the script downloads open data from the Microsoft Planetary Computer or NASA POWER. Several validation scripts import helpers from `witness.py` and may also download data when they run.
+Place `anrf-aise-hack-2-0-round-2-sar-crop-health-yield-estimation/` inside this folder, or set `AISE_DATA`.
 
-| Script | Role | Writes | Needs |
-|:--|:--|:--|:--|
-| `common.py` | paths, scene lookup, guards; run alone for a self-check | — | data |
-| `eda.py` | exploratory checks before any processing; scene metadata | `tables/scene_metadata.csv`, figures | data |
-| `prep_r2.py` | SLC → calibrated, geocoded γ⁰ rasters | `results/cache/` | data |
-| `check_i1.py` | land-cover dB gate and a geocoding regression test | log | data, cache |
-| `farm_stats.py` | per-plot features | `results/farm_features.csv` | data, cache |
-| `sublook.py` | sub-look coherence columns (`subcoh_*`) | `farm_features.csv` | data, cache |
-| `wcm.py` | Water Cloud Model columns (`vwc_*`, `vwcflag_*`, `wcm_k_db`) | `farm_features.csv` | features |
-| `check_i2.py` | feature quality and redundancy checks | log | features |
-| `d4_submission.py` | crop type, health index, yield to date | `results/submission.csv`, `d4_debug.csv` | features, shapefiles |
-| `i8_repeat.py` | repeat-pass coherence, 19 Jun × 14 Aug (a reported negative) | `tables/i8_repeat_coh.csv` | data, cache |
-| `witness.py` | Sentinel-2 and Sentinel-1 witnesses | `tables/witness.csv` | internet |
-| `witness_season.py` | 10-scene Sentinel-1 season integral | `tables/witness_season.csv` | internet |
-| `external_context.py` | rainfall and multi-year cropland context | `tables/context_*.csv` | internet |
-| `i5_validation.py` | validation battery: separation tests, Moran's I, ablation | log | witness tables |
-| `check_yield.py` | yield terms vs the witnesses | log | witness tables |
-| `check_rice_independence.py` | leave-channel-out test of the rice flooding term | log | witness tables |
-| `independent_crop.py` | independent Sentinel-1 + Sentinel-2 crop map and κ | `tables/independent_crop.csv`, `independent_features.csv` | internet |
-| `metrics_panel.py` | fixed metric panel used to judge every change | log | witness tables |
-| `pb_mrf.py` | alternative clustering with a spatial prior (comparison only) | `tables/pb_crop.csv` | features |
-| `why_xband.py` | what about 1 m X-band adds over 10 m optical | `tables/why_xband_*.csv` | witness tables |
-| `i10_media.py` | figures | `results/figures/` | results |
-
-## 8. Reproducing the result
-
-Place the Phase 2 download `anrf-aise-hack-2-0-round-2-sar-crop-health-yield-estimation/` inside this folder, or set `AISE_DATA` to its path.
-
-**Quick route.** This needs only the shapefiles from the download:
+**Quick route.** This rebuilds the submission from the shipped feature table and needs only the shapefiles.
 
 ```bash
 cd phase2_crop_type_health
@@ -218,10 +187,10 @@ python src/d4_submission.py
 md5sum results/submission.csv      # 89b0e4e2aef63ace4989fc0a44590ee5
 ```
 
-**Full route, from the raw SLCs** (about 2 minutes on a 16-thread desktop):
+**Full route,** from the raw SLC scenes (about 2 minutes):
 
 ```bash
-python src/common.py               # self-check: four scenes, duplicate-file trap
+python src/common.py               # self-check
 python src/prep_r2.py              # -> results/cache/
 python src/farm_stats.py           # -> results/farm_features.csv
 python src/sublook.py
@@ -229,7 +198,7 @@ python src/wcm.py
 python src/d4_submission.py        # -> results/submission.csv
 ```
 
-**Validation scripts** (some download open data):
+**Validation scripts.** Some of these download open data.
 
 ```bash
 python src/witness.py; python src/witness_season.py; python src/external_context.py
@@ -237,41 +206,53 @@ python src/i5_validation.py; python src/check_yield.py; python src/check_rice_in
 python src/independent_crop.py; python src/metrics_panel.py; python src/pb_mrf.py; python src/why_xband.py
 ```
 
-**Notebook.** `notebooks/I9_pipeline.ipynb` runs the same steps with commentary. Its last cell asserts that the crop type, health index and yield match `results/submission.csv` exactly. It needs `results/cache/` (run `prep_r2.py` first) and the witness tables.
+**Notebook.** `notebooks/I9_pipeline.ipynb` runs the same steps with commentary. It needs `results/cache/` (from `prep_r2.py`) and the validation tables. Its final cell confirms that the crop type, health index and yield match `results/submission.csv`.
 
-## 9. Verification
+## 8. Script Reference
 
-Run on 2026-10-24 in a fresh copy of this repository:
+The "Needs" column uses three terms:
 
-| Check | Result |
-|:--|:--|
-| `prep_r2.py` → `farm_stats.py` → `sublook.py` → `wcm.py` from the raw SLCs | `farm_features.csv` byte-identical (md5 `42b022a51d28c2675f1f35415ee660d9`) |
-| `d4_submission.py` (full and quick routes) | `submission.csv` md5 `89b0e4e2aef63ace4989fc0a44590ee5` |
-| every other script in Section 7 | runs without error; all 12 tables identical to the shipped copies, including the witness and context tables re-downloaded from the internet |
-| `notebooks/I9_pipeline.ipynb`, all cells | runs top to bottom and reproduces the submission exactly |
+- **Data:** the Phase 2 download.
+- **Cache:** the rasters from `prep_r2.py`.
+- **Internet:** the script downloads open data. Several validation scripts import helpers from `witness.py` and may also download data.
 
-**Two tables regenerated for this release.** `independent_crop.csv` and `pb_crop.csv` from the competition had been computed against an earlier version of the crop map that differed in 43 plots. They are replaced by versions computed against the final map. The competition report quoted three statistics from that earlier map:
+| Script | Purpose | Writes | Needs |
+|:--|:--|:--|:--|
+| `common.py` | Paths, scene selection, guards; self-check when run | — | Data |
+| `eda.py` | Exploratory checks; scene metadata | `tables/scene_metadata.csv`, figures | Data |
+| `prep_r2.py` | SLC → calibrated, geocoded γ⁰ | `results/cache/` | Data |
+| `check_i1.py` | Land-cover dB gate; geocoding regression test | log | Data, cache |
+| `farm_stats.py` | Per-plot features | `results/farm_features.csv` | Data, cache |
+| `sublook.py` | Sub-look coherence (`subcoh_*`) | `farm_features.csv` | Data, cache |
+| `wcm.py` | Water Cloud Model columns (`vwc_*`, `vwcflag_*`, `wcm_k_db`) | `farm_features.csv` | Features |
+| `check_i2.py` | Feature quality and redundancy | log | Features |
+| `d4_submission.py` | Crop type, health index, yield to date | `results/submission.csv`, `d4_debug.csv` | Features, shapefiles |
+| `i8_repeat.py` | Repeat-pass coherence | `tables/i8_repeat_coh.csv` | Data, cache |
+| `witness.py` | Sentinel-2 and Sentinel-1 check data | `tables/witness.csv` | Internet |
+| `witness_season.py` | Sentinel-1 season integral | `tables/witness_season.csv` | Internet |
+| `external_context.py` | Rainfall and multi-year cropland context | `tables/context_*.csv` | Internet |
+| `i5_validation.py` | Separation tests, Moran's I, ablation | log | Check tables |
+| `check_yield.py` | Yield terms vs check data | log | Check tables |
+| `check_rice_independence.py` | Leave-channel-out test of the rice term | log | Check tables |
+| `independent_crop.py` | Independent Sentinel-1 + Sentinel-2 crop map and κ | `tables/independent_crop.csv`, `independent_features.csv` | Internet |
+| `metrics_panel.py` | Fixed panel of evaluation metrics | log | Check tables |
+| `pb_mrf.py` | Alternative clustering with a spatial prior (comparison) | `tables/pb_crop.csv` | Features |
+| `why_xband.py` | Contribution of 1 m X-band relative to 10 m optical | `tables/why_xband_*.csv` | Check tables |
+| `i10_media.py` | Figures | `results/figures/` | Results |
 
-| Statistic | Report | Final map |
-|:--|:--|:--|
-| κ, plot labels vs independent map | 0.103 | 0.112 |
-| Kruskal–Wallis p, NDVI / VH | 1.8 × 10⁻³⁴ / 7.7 × 10⁻²⁰ | 9.3 × 10⁻³⁵ / 2.7 × 10⁻²⁰ |
-| Moran's I, health index | 0.105 | 0.096 |
+## 9. Limitations
 
-## 10. Limitations
+- **No ground truth** for crop type, health or yield.
+- **Per-plot crop labels are weak** (κ = 0.112). Results should be read at village and crop level.
+- **Bajra:** its season-integral term disagrees with the Sentinel-1 season integral.
+- **Calibration:** the unsquared calibration constant affects the fixed flooding thresholds, and Phase 3 inherits these crop labels.
 
-- **No ground truth** for crop, health or yield.
-- **Per-plot crop labels are weak** (κ = 0.112). The village mix is constrained; single plot labels are not, so the product should be read at village and crop level.
-- **Bajra:** its season-integral term contradicts the Sentinel-1 season witness.
-- **Calibration:** the unsquared calibration constant (Section 3.1) affects the fixed flooding thresholds. Phase 3 inherits these crop labels.
+## 10. Scope of this Release
 
-## 11. What is deliberately not included
+Not included:
 
-| Left out | Reason |
-|:--|:--|
-| Land-parcel registry scripts and survey-number tables | they link plots to land records (privacy) |
-| Templates for a manual field ground-truth campaign | they are built from the land-parcel registry (privacy) |
-| Krishi-DSS client and external-layer validator | they need a personal session token |
-| `d11_ship.py`, packaging and document-rendering scripts | they check the competition's writeup package, not the science |
-| `diagnose_fixes.py` | an internal comparison that needs a pre-fix baseline submission not kept here |
-| The host's `Sokhda_Dummy_Submission.xlsx` | competition file; download it from the competition page if needed |
+- **Land-parcel registry scripts and related tables:** they link plots to land records (privacy).
+- **Field data-collection templates:** they are derived from the registry.
+- **Clients for services that need personal credentials.**
+- **Competition packaging, document-rendering and submission-gate scripts.**
+- **The host's `Sokhda_Dummy_Submission.xlsx`:** available from the competition page.
