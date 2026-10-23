@@ -1,0 +1,13 @@
+asset,src,why,rows,cols,status,note
+embed,results/e14_embeddings/farm_embed.csv,64-band AlphaEarth annual embedding; re-fetch needs interactive Google auth,966,65,COPIED,no farm-id join expected
+s1_agree,results/e17_dense_s1/two_sensor_agreement.csv,per-farm s1_ok/emb_ok: the 42.5%-uncorroborated finding as a column,956,6,JOIN_PARTIAL,"ids 1..966, unique 956"
+label_dist,results/e18_label_distribution/label_distribution.csv,per-farm five-class posterior + entropy,966,10,JOIN_OK,"ids 1..966, unique 966"
+uncert,results/e11_uncertainty/health_uncertainty.csv,calibrated per-farm sampling SE,885,5,JOIN_PARTIAL,"ids 1..966, unique 885"
+gee,results/e13_gee/farm_gee.csv,Dynamic World + WorldCereal; re-fetch needs interactive Google auth,966,9,JOIN_OK,"ids 1..966, unique 966"
+consensus,results/e4_consensus_all/consensus_crop.csv,all six teams' crop label per farm,966,10,JOIN_OK,"ids 1..966, unique 966"
+calib_ref,results/e1_calibration/farm_features_calibrated.csv,"SF-squared four-date features: a REPRODUCTION TARGET, never an input",966,61,COPIED,no farm-id join expected
+anchors,results/e10_kharif_anchors/vadodara_season_crops.csv,461 Vadodara season-split district records; source API is paged and flaky,461,7,COPIED,no farm-id join expected
+orion_feat,writeups_submissions/project_orion_team_apes/farm_features.csv,THIRD PARTY. Their own per-farm g0_db_T1..T4: the only external check on our chain,966,50,JOIN_OK,"ids 1..966, unique 966"
+orion_ndvi,writeups_submissions/project_orion_team_apes/farm_ndvi.csv,THIRD PARTY. Per-farm NDVI incl. an 18 Oct scene we never fetched,966,13,JOIN_OK,"ids 1..966, unique 966"
+orion_vill,writeups_submissions/project_orion_team_apes/village_summary.csv,THIRD PARTY. A worked example of the 15-point aggregation deliverable,6,10,COPIED,no farm-id join expected
+orion_zone,writeups_submissions/project_orion_team_apes/zone_summary.csv,THIRD PARTY. 46-zone 500 m grid: the sub-village product we never built,46,8,COPIED,no farm-id join expected

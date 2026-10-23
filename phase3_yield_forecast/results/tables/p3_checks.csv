@@ -1,0 +1,20 @@
+check,item,pass,detail
+D1,Rice,True,ratio 1.04 (expected 0.8-1.3); R3 1.690 vs R2 1.631 t/ha
+D1,Cotton,True,ratio 1.84 (expected 1.5-4.0); R3 0.730 vs R2 0.396 t/ha
+D1,Maize,True,ratio 1.00 (expected 0.8-1.3); R3 2.312 vs R2 2.321 t/ha
+D1,Bajra,True,ratio 0.71 (expected 0.5-1.3); R3 1.910 vs R2 2.675 t/ha
+D1,Groundnut,True,ratio 1.30 (expected 1.0-1.6); R3 2.514 vs R2 1.931 t/ha
+D1,village,True,final forecast 710.0 t must be >= yield-to-date 594.9 t (ratio 1.19)
+D2,band,True,"710.0 t within 578.0-1268.0 t (Megalodon 578, our R2 595, Orion 1002, Coding Bits 1268)"
+D3,Rice,True,"1.690 t/ha in [1.0, 3.5]"
+D3,Cotton,True,"0.730 t/ha in [0.3, 1.2]"
+D3,Maize,True,"2.312 t/ha in [1.2, 4.0]"
+D3,Bajra,True,"1.910 t/ha in [0.8, 3.0]"
+D3,Groundnut,True,"2.514 t/ha in [1.0, 3.2]"
+D4,residual,True,labels explain 20.2% of raw NDVI (p=5.7e-36) and 11.2% of the residual (p=1.1e-21) -- 55% survives removing the SAR axis
+D5,cotton_last,True,"cotton must have the LOWEST yield-to-date -- it is the only crop still picking: Cotton 0.20, Rice 1.69, Bajra 1.91, Maize 2.31, Groundnut 2.39"
+D8,rows,True,966 unique rows
+D8,not_constant,True,886 distinct yields
+D8,crops,True,5 crop classes
+D8,units,True,max 3.391 t/ha
+D8,health,True,"health sd 18.9 pts, range 2-98"

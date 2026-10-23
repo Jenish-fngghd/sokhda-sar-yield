@@ -1,0 +1,4 @@
+labels,eta2_raw_ndvi,eta2_residual,survives_pct,n_differs_from_ours,village_total_t
+ours (shipped),0.2025,0.1122,55.4,0,710.0
+majority vote,0.1394,0.0825,59.2,531,640.1
+Dawid-Skene,0.2886,0.2627,91.0,509,684.8

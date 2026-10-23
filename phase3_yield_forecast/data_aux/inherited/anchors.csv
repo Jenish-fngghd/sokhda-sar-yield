@@ -1,0 +1,462 @@
+state_name,district_name,crop_year,season,crop,area_,production_
+Gujarat,VADODARA,1997,Kharif,Arhar/Tur,105400,82600
+Gujarat,VADODARA,1997,Kharif,Bajra,12100,16400
+Gujarat,VADODARA,1997,Kharif,Dry chillies,1400,1200
+Gujarat,VADODARA,1997,Kharif,Groundnut,2700,3600
+Gujarat,VADODARA,1997,Kharif,Jowar,4800,8200
+Gujarat,VADODARA,1997,Kharif,Moong(Green Gram),3700,2300
+Gujarat,VADODARA,1997,Kharif,Moth,700,400
+Gujarat,VADODARA,1997,Kharif,Other Kharif pulses,600,300
+Gujarat,VADODARA,1997,Kharif,Urad,15200,8000
+Gujarat,VADODARA,1997,Rabi,Gram,1800,1500
+Gujarat,VADODARA,1997,Rabi,Jowar,21200,19400
+Gujarat,VADODARA,1997,Rabi,Other  Rabi pulses,500,300
+Gujarat,VADODARA,1997,Rabi,Rapeseed &Mustard,300,300
+Gujarat,VADODARA,1997,Rabi,Wheat,13900,29700
+Gujarat,VADODARA,1997,Summer,Bajra,6100,12000
+Gujarat,VADODARA,1997,Summer,Groundnut,10300,17200
+Gujarat,VADODARA,1997,Whole Year,Banana,3700,245400
+Gujarat,VADODARA,1997,Whole Year,Castor seed,15000,20200
+Gujarat,VADODARA,1997,Whole Year,Cotton(lint),149800,246100
+Gujarat,VADODARA,1997,Whole Year,Maize,49200,86300
+Gujarat,VADODARA,1997,Whole Year,Onion,100,3500
+Gujarat,VADODARA,1997,Whole Year,Potato,800,17400
+Gujarat,VADODARA,1997,Whole Year,Pulses total,125600,936
+Gujarat,VADODARA,1997,Whole Year,Rice,54700,54700
+Gujarat,VADODARA,1997,Whole Year,Sesamum,1400,800
+Gujarat,VADODARA,1997,Whole Year,Sugarcane,1400,104000
+Gujarat,VADODARA,1997,Whole Year,Tobacco,25800,31400
+Gujarat,VADODARA,1998,Kharif,Arhar/Tur,99900,85600
+Gujarat,VADODARA,1998,Kharif,Bajra,6900,5400
+Gujarat,VADODARA,1998,Kharif,Castor seed,14300,16400
+Gujarat,VADODARA,1998,Kharif,Cotton(lint),177000,368000
+Gujarat,VADODARA,1998,Kharif,Groundnut,1600,2100
+Gujarat,VADODARA,1998,Kharif,Jowar,4300,4500
+Gujarat,VADODARA,1998,Kharif,Maize,46600,78400
+Gujarat,VADODARA,1998,Kharif,Moong(Green Gram),2300,1300
+Gujarat,VADODARA,1998,Kharif,Moth,1200,800
+Gujarat,VADODARA,1998,Kharif,Other Kharif pulses,300,200
+Gujarat,VADODARA,1998,Kharif,Rice,53500,61900
+Gujarat,VADODARA,1998,Kharif,Sesamum,2000,900
+Gujarat,VADODARA,1998,Kharif,Urad,13300,8900
+Gujarat,VADODARA,1998,Rabi,Gram,2100,1500
+Gujarat,VADODARA,1998,Rabi,Jowar,15900,13100
+Gujarat,VADODARA,1998,Rabi,Other  Rabi pulses,200,100
+Gujarat,VADODARA,1998,Rabi,Rapeseed &Mustard,300,500
+Gujarat,VADODARA,1998,Rabi,Small millets,1300,600
+Gujarat,VADODARA,1998,Rabi,Wheat,19800,33600
+Gujarat,VADODARA,1998,Summer,Bajra,5900,10900
+Gujarat,VADODARA,1998,Summer,Groundnut,11100,16100
+Gujarat,VADODARA,1998,Whole Year,Banana,4800,355600
+Gujarat,VADODARA,1998,Whole Year,Dry chillies,900,600
+Gujarat,VADODARA,1998,Whole Year,Oilseeds total,29300,36000
+Gujarat,VADODARA,1998,Whole Year,Onion,200,6500
+Gujarat,VADODARA,1998,Whole Year,Potato,600,13400
+Gujarat,VADODARA,1998,Whole Year,Pulses total,119300,98400
+Gujarat,VADODARA,1998,Whole Year,Sugarcane,3100,211000
+Gujarat,VADODARA,1998,Whole Year,Tobacco,21700,24600
+Gujarat,VADODARA,1999,Kharif,Arhar/Tur,100600,83800
+Gujarat,VADODARA,1999,Kharif,Bajra,7900,6800
+Gujarat,VADODARA,1999,Kharif,Castor seed,11700,15100
+Gujarat,VADODARA,1999,Kharif,Cotton(lint),178000,289400
+Gujarat,VADODARA,1999,Kharif,Groundnut,1200,400
+Gujarat,VADODARA,1999,Kharif,Jowar,4200,5700
+Gujarat,VADODARA,1999,Kharif,Maize,49600,59600
+Gujarat,VADODARA,1999,Kharif,Moong(Green Gram),1600,500
+Gujarat,VADODARA,1999,Kharif,Moth,500,200
+Gujarat,VADODARA,1999,Kharif,Other Kharif pulses,300,200
+Gujarat,VADODARA,1999,Kharif,Rice,48300,26800
+Gujarat,VADODARA,1999,Kharif,Sesamum,1400,400
+Gujarat,VADODARA,1999,Kharif,Urad,14200,5300
+Gujarat,VADODARA,1999,Rabi,Gram,1800,900
+Gujarat,VADODARA,1999,Rabi,Jowar,18100,15700
+Gujarat,VADODARA,1999,Rabi,Other  Rabi pulses,600,300
+Gujarat,VADODARA,1999,Rabi,Rapeseed &Mustard,200,200
+Gujarat,VADODARA,1999,Rabi,Small millets,4700,1600
+Gujarat,VADODARA,1999,Rabi,Wheat,15100,35800
+Gujarat,VADODARA,1999,Summer,Bajra,6400,11300
+Gujarat,VADODARA,1999,Summer,Groundnut,3900,6600
+Gujarat,VADODARA,1999,Whole Year,Banana,3700,276100
+Gujarat,VADODARA,1999,Whole Year,Dry chillies,1300,500
+Gujarat,VADODARA,1999,Whole Year,Onion,300,6700
+Gujarat,VADODARA,1999,Whole Year,Potato,600,14000
+Gujarat,VADODARA,1999,Whole Year,Sugarcane,2100,145000
+Gujarat,VADODARA,1999,Whole Year,Tobacco,23800,25700
+Gujarat,VADODARA,2000,Kharif,Arhar/Tur,90600,32500
+Gujarat,VADODARA,2000,Kharif,Bajra,8100,7100
+Gujarat,VADODARA,2000,Kharif,Castor seed,15300,11100
+Gujarat,VADODARA,2000,Kharif,Cotton(lint),157700,173500
+Gujarat,VADODARA,2000,Kharif,Groundnut,2100,800
+Gujarat,VADODARA,2000,Kharif,Jowar,5800,2700
+Gujarat,VADODARA,2000,Kharif,Maize,50200,46700
+Gujarat,VADODARA,2000,Kharif,Moong(Green Gram),2100,600
+Gujarat,VADODARA,2000,Kharif,Moth,400,NA
+Gujarat,VADODARA,2000,Kharif,Other Kharif pulses,800,400
+Gujarat,VADODARA,2000,Kharif,Rice,51500,6100
+Gujarat,VADODARA,2000,Kharif,Sesamum,1700,500
+Gujarat,VADODARA,2000,Kharif,Urad,10500,1800
+Gujarat,VADODARA,2000,Rabi,Gram,900,500
+Gujarat,VADODARA,2000,Rabi,Jowar,10000,2700
+Gujarat,VADODARA,2000,Rabi,Other  Rabi pulses,500,300
+Gujarat,VADODARA,2000,Rabi,Rapeseed &Mustard,100,100
+Gujarat,VADODARA,2000,Rabi,Wheat,6000,14400
+Gujarat,VADODARA,2000,Summer,Bajra,3200,5800
+Gujarat,VADODARA,2000,Summer,Groundnut,1000,2100
+Gujarat,VADODARA,2000,Whole Year,Banana,4200,308600
+Gujarat,VADODARA,2000,Whole Year,Dry chillies,2600,1000
+Gujarat,VADODARA,2000,Whole Year,Guar seed,1700,400
+Gujarat,VADODARA,2000,Whole Year,Onion,100,1100
+Gujarat,VADODARA,2000,Whole Year,Potato,500,10600
+Gujarat,VADODARA,2000,Whole Year,Sugarcane,1000,76000
+Gujarat,VADODARA,2000,Whole Year,Tobacco,15800,18800
+Gujarat,VADODARA,2001,Kharif,Arhar/Tur,96300,49200
+Gujarat,VADODARA,2001,Kharif,Bajra,9300,9900
+Gujarat,VADODARA,2001,Kharif,Castor seed,7500,9400
+Gujarat,VADODARA,2001,Kharif,Cotton(lint),178100,158400
+Gujarat,VADODARA,2001,Kharif,Groundnut,2300,3200
+Gujarat,VADODARA,2001,Kharif,Jowar,2700,3600
+Gujarat,VADODARA,2001,Kharif,Maize,54600,105100
+Gujarat,VADODARA,2001,Kharif,Moong(Green Gram),2300,1000
+Gujarat,VADODARA,2001,Kharif,Moth,400,100
+Gujarat,VADODARA,2001,Kharif,Other Kharif pulses,1000,600
+Gujarat,VADODARA,2001,Kharif,Rice,58600,48700
+Gujarat,VADODARA,2001,Kharif,Sesamum,2400,1400
+Gujarat,VADODARA,2001,Kharif,Small millets,100,NA
+Gujarat,VADODARA,2001,Kharif,Urad,16200,11200
+Gujarat,VADODARA,2001,Rabi,Gram,900,500
+Gujarat,VADODARA,2001,Rabi,Jowar,10400,7300
+Gujarat,VADODARA,2001,Rabi,Rapeseed &Mustard,100,100
+Gujarat,VADODARA,2001,Rabi,Wheat,7300,15600
+Gujarat,VADODARA,2001,Summer,Bajra,2600,5100
+Gujarat,VADODARA,2001,Summer,Groundnut,3100,3900
+Gujarat,VADODARA,2001,Whole Year,Banana,4600,351100
+Gujarat,VADODARA,2001,Whole Year,Dry chillies,1300,600
+Gujarat,VADODARA,2001,Whole Year,Guar seed,1400,600
+Gujarat,VADODARA,2001,Whole Year,Onion,100,2800
+Gujarat,VADODARA,2001,Whole Year,Potato,600,13000
+Gujarat,VADODARA,2001,Whole Year,Sugarcane,1200,86000
+Gujarat,VADODARA,2001,Whole Year,Tobacco,14000,9800
+Gujarat,VADODARA,2002,Kharif,Arhar/Tur,100000,74500
+Gujarat,VADODARA,2002,Kharif,Bajra,10100,11700
+Gujarat,VADODARA,2002,Kharif,Castor seed,8100,10500
+Gujarat,VADODARA,2002,Kharif,Cotton(lint),158400,243800
+Gujarat,VADODARA,2002,Kharif,Groundnut,1400,700
+Gujarat,VADODARA,2002,Kharif,Jowar,3400,5300
+Gujarat,VADODARA,2002,Kharif,Maize,53800,89900
+Gujarat,VADODARA,2002,Kharif,Moong(Green Gram),1600,500
+Gujarat,VADODARA,2002,Kharif,Moth,500,300
+Gujarat,VADODARA,2002,Kharif,Other Kharif pulses,900,500
+Gujarat,VADODARA,2002,Kharif,Rice,47200,38000
+Gujarat,VADODARA,2002,Kharif,Sesamum,2400,800
+Gujarat,VADODARA,2002,Kharif,Urad,14200,9200
+Gujarat,VADODARA,2002,Rabi,Gram,1200,700
+Gujarat,VADODARA,2002,Rabi,Jowar,9400,8500
+Gujarat,VADODARA,2002,Rabi,Rapeseed &Mustard,400,500
+Gujarat,VADODARA,2002,Rabi,Wheat,10500,24000
+Gujarat,VADODARA,2002,Summer,Bajra,3600,6300
+Gujarat,VADODARA,2002,Summer,Groundnut,4100,7300
+Gujarat,VADODARA,2002,Whole Year,Dry chillies,400,200
+Gujarat,VADODARA,2002,Whole Year,Guar seed,200,100
+Gujarat,VADODARA,2002,Whole Year,Potato,600,12600
+Gujarat,VADODARA,2002,Whole Year,Sugarcane,1800,128000
+Gujarat,VADODARA,2002,Whole Year,Tobacco,15100,19700
+Gujarat,VADODARA,2003,Kharif,Arhar/Tur,94800,64900
+Gujarat,VADODARA,2003,Kharif,Bajra,10900,14200
+Gujarat,VADODARA,2003,Kharif,Castor seed,5800,8700
+Gujarat,VADODARA,2003,Kharif,Cotton(lint),158100,316400
+Gujarat,VADODARA,2003,Kharif,Groundnut,1700,3800
+Gujarat,VADODARA,2003,Kharif,Jowar,10200,19700
+Gujarat,VADODARA,2003,Kharif,Maize,50400,82300
+Gujarat,VADODARA,2003,Kharif,Moong(Green Gram),2100,1200
+Gujarat,VADODARA,2003,Kharif,Moth,300,200
+Gujarat,VADODARA,2003,Kharif,Other Kharif pulses,100,100
+Gujarat,VADODARA,2003,Kharif,Rice,47200,59400
+Gujarat,VADODARA,2003,Kharif,Sesamum,1800,1100
+Gujarat,VADODARA,2003,Kharif,Urad,13100,10700
+Gujarat,VADODARA,2003,Rabi,Gram,1300,800
+Gujarat,VADODARA,2003,Rabi,Jowar,6100,5400
+Gujarat,VADODARA,2003,Rabi,Other  Rabi pulses,100,100
+Gujarat,VADODARA,2003,Rabi,Rapeseed &Mustard,200,400
+Gujarat,VADODARA,2003,Rabi,Small millets,4700,1800
+Gujarat,VADODARA,2003,Rabi,Wheat,16100,38700
+Gujarat,VADODARA,2003,Summer,Bajra,3300,6000
+Gujarat,VADODARA,2003,Summer,Groundnut,12400,19800
+Gujarat,VADODARA,2003,Whole Year,Banana,2600,201800
+Gujarat,VADODARA,2003,Whole Year,Dry chillies,600,300
+Gujarat,VADODARA,2003,Whole Year,Garlic,100,600
+Gujarat,VADODARA,2003,Whole Year,Guar seed,800,600
+Gujarat,VADODARA,2003,Whole Year,Onion,100,2400
+Gujarat,VADODARA,2003,Whole Year,Potato,700,15700
+Gujarat,VADODARA,2003,Whole Year,Sugarcane,2700,194000
+Gujarat,VADODARA,2003,Whole Year,Tobacco,12700,15200
+Gujarat,VADODARA,2004,Kharif,Arhar/Tur,76500,73200
+Gujarat,VADODARA,2004,Kharif,Bajra,7700,7400
+Gujarat,VADODARA,2004,Kharif,Castor seed,9700,10200
+Gujarat,VADODARA,2004,Kharif,Cotton(lint),172800,449900
+Gujarat,VADODARA,2004,Kharif,Groundnut,1700,1500
+Gujarat,VADODARA,2004,Kharif,Jowar,4200,6700
+Gujarat,VADODARA,2004,Kharif,Maize,52000,58200
+Gujarat,VADODARA,2004,Kharif,Moong(Green Gram),1900,800
+Gujarat,VADODARA,2004,Kharif,Moth,300,100
+Gujarat,VADODARA,2004,Kharif,Other Cereals & Millets,200,100
+Gujarat,VADODARA,2004,Kharif,Other Kharif pulses,300,200
+Gujarat,VADODARA,2004,Kharif,Rice,52100,54300
+Gujarat,VADODARA,2004,Kharif,Sesamum,1800,600
+Gujarat,VADODARA,2004,Kharif,Small millets,200,100
+Gujarat,VADODARA,2004,Kharif,Urad,11800,7600
+Gujarat,VADODARA,2004,Rabi,Gram,1400,900
+Gujarat,VADODARA,2004,Rabi,Jowar,7300,6400
+Gujarat,VADODARA,2004,Rabi,Other Cereals & Millets,7100,2800
+Gujarat,VADODARA,2004,Rabi,Rapeseed &Mustard,100,200
+Gujarat,VADODARA,2004,Rabi,Small millets,7100,2800
+Gujarat,VADODARA,2004,Rabi,Wheat,16000,36000
+Gujarat,VADODARA,2004,Summer,Bajra,2900,5200
+Gujarat,VADODARA,2004,Summer,Groundnut,13600,22800
+Gujarat,VADODARA,2004,Whole Year,Banana,3300,209000
+Gujarat,VADODARA,2004,Whole Year,Dry chillies,300,200
+Gujarat,VADODARA,2004,Whole Year,Guar seed,500,400
+Gujarat,VADODARA,2004,Whole Year,Onion,100,2900
+Gujarat,VADODARA,2004,Whole Year,Potato,500,14800
+Gujarat,VADODARA,2004,Whole Year,Sugarcane,2300,168000
+Gujarat,VADODARA,2004,Whole Year,Tobacco,16700,17200
+Gujarat,VADODARA,2005,Kharif,Arhar/Tur,77800,73900
+Gujarat,VADODARA,2005,Kharif,Bajra,7100,7300
+Gujarat,VADODARA,2005,Kharif,Castor seed,14000,21500
+Gujarat,VADODARA,2005,Kharif,Cotton(lint),178100,463900
+Gujarat,VADODARA,2005,Kharif,Groundnut,1000,1700
+Gujarat,VADODARA,2005,Kharif,Jowar,2800,4900
+Gujarat,VADODARA,2005,Kharif,Maize,52700,75800
+Gujarat,VADODARA,2005,Kharif,Moong(Green Gram),2000,1200
+Gujarat,VADODARA,2005,Kharif,Moth,400,200
+Gujarat,VADODARA,2005,Kharif,Other Kharif pulses,200,100
+Gujarat,VADODARA,2005,Kharif,Rice,53100,61300
+Gujarat,VADODARA,2005,Kharif,Sesamum,1500,600
+Gujarat,VADODARA,2005,Kharif,Urad,13300,12800
+Gujarat,VADODARA,2005,Rabi,Gram,1200,1300
+Gujarat,VADODARA,2005,Rabi,Jowar,5400,5800
+Gujarat,VADODARA,2005,Rabi,Other  Rabi pulses,200,200
+Gujarat,VADODARA,2005,Rabi,Other Cereals & Millets,5900,8000
+Gujarat,VADODARA,2005,Rabi,Rapeseed &Mustard,600,1000
+Gujarat,VADODARA,2005,Rabi,Wheat,15700,35400
+Gujarat,VADODARA,2005,Summer,Bajra,3800,7900
+Gujarat,VADODARA,2005,Summer,Groundnut,10100,16100
+Gujarat,VADODARA,2005,Whole Year,Banana,4000,237700
+Gujarat,VADODARA,2005,Whole Year,Dry chillies,500,300
+Gujarat,VADODARA,2005,Whole Year,Guar seed,400,200
+Gujarat,VADODARA,2005,Whole Year,Onion,100,3700
+Gujarat,VADODARA,2005,Whole Year,Potato,300,7700
+Gujarat,VADODARA,2005,Whole Year,Sugarcane,2400,155000
+Gujarat,VADODARA,2005,Whole Year,Tobacco,14200,17400
+Gujarat,VADODARA,2006,Kharif,Arhar/Tur,68900,57700
+Gujarat,VADODARA,2006,Kharif,Bajra,7200,3800
+Gujarat,VADODARA,2006,Kharif,Castor seed,11500,15100
+Gujarat,VADODARA,2006,Kharif,Cotton(lint),185200,415300
+Gujarat,VADODARA,2006,Kharif,Groundnut,1700,1600
+Gujarat,VADODARA,2006,Kharif,Jowar,5300,8200
+Gujarat,VADODARA,2006,Kharif,Maize,53100,50500
+Gujarat,VADODARA,2006,Kharif,Moong(Green Gram),1700,600
+Gujarat,VADODARA,2006,Kharif,Moth,300,100
+Gujarat,VADODARA,2006,Kharif,Other Cereals & Millets,300,200
+Gujarat,VADODARA,2006,Kharif,Other Kharif pulses,8600,5200
+Gujarat,VADODARA,2006,Kharif,Rice,49500,57400
+Gujarat,VADODARA,2006,Kharif,Sesamum,1700,300
+Gujarat,VADODARA,2006,Kharif,Urad,11600,9500
+Gujarat,VADODARA,2006,Rabi,Gram,1700,1900
+Gujarat,VADODARA,2006,Rabi,Jowar,5000,4300
+Gujarat,VADODARA,2006,Rabi,Other  Rabi pulses,100,100
+Gujarat,VADODARA,2006,Rabi,Other Cereals & Millets,5500,7100
+Gujarat,VADODARA,2006,Rabi,Rapeseed &Mustard,500,600
+Gujarat,VADODARA,2006,Rabi,Wheat,23500,52900
+Gujarat,VADODARA,2006,Summer,Bajra,4400,9000
+Gujarat,VADODARA,2006,Summer,Groundnut,9300,18600
+Gujarat,VADODARA,2006,Whole Year,Banana,3600,228900
+Gujarat,VADODARA,2006,Whole Year,Dry chillies,500,400
+Gujarat,VADODARA,2006,Whole Year,Guar seed,400,200
+Gujarat,VADODARA,2006,Whole Year,Onion,200,3800
+Gujarat,VADODARA,2006,Whole Year,Potato,400,7500
+Gujarat,VADODARA,2006,Whole Year,Sugarcane,3200,223000
+Gujarat,VADODARA,2006,Whole Year,Tobacco,11400,13500
+Gujarat,VADODARA,2007,Kharif,Arhar/Tur,75700,85800
+Gujarat,VADODARA,2007,Kharif,Bajra,6500,8900
+Gujarat,VADODARA,2007,Kharif,Castor seed,16600,22700
+Gujarat,VADODARA,2007,Kharif,Cotton(lint),173400,456200
+Gujarat,VADODARA,2007,Kharif,Groundnut,1100,1900
+Gujarat,VADODARA,2007,Kharif,Jowar,1900,1800
+Gujarat,VADODARA,2007,Kharif,Maize,51800,91500
+Gujarat,VADODARA,2007,Kharif,Moong(Green Gram),1900,1100
+Gujarat,VADODARA,2007,Kharif,Other Cereals & Millets,700,500
+Gujarat,VADODARA,2007,Kharif,Other Kharif pulses,400,300
+Gujarat,VADODARA,2007,Kharif,Rice,61400,83600
+Gujarat,VADODARA,2007,Kharif,Sesamum,1500,600
+Gujarat,VADODARA,2007,Kharif,Urad,12900,11900
+Gujarat,VADODARA,2007,Rabi,Gram,2200,2200
+Gujarat,VADODARA,2007,Rabi,Jowar,4800,4900
+Gujarat,VADODARA,2007,Rabi,Other  Rabi pulses,300,200
+Gujarat,VADODARA,2007,Rabi,Other Cereals & Millets,7800,10200
+Gujarat,VADODARA,2007,Rabi,Rapeseed &Mustard,700,1100
+Gujarat,VADODARA,2007,Rabi,Wheat,30100,77700
+Gujarat,VADODARA,2007,Summer,Bajra,4800,10500
+Gujarat,VADODARA,2007,Summer,Groundnut,16000,26100
+Gujarat,VADODARA,2007,Whole Year,Banana,4300,287700
+Gujarat,VADODARA,2007,Whole Year,Dry chillies,600,500
+Gujarat,VADODARA,2007,Whole Year,Garlic,100,400
+Gujarat,VADODARA,2007,Whole Year,Guar seed,700,500
+Gujarat,VADODARA,2007,Whole Year,Onion,400,12700
+Gujarat,VADODARA,2007,Whole Year,Potato,800,21000
+Gujarat,VADODARA,2007,Whole Year,Sugarcane,3900,279000
+Gujarat,VADODARA,2007,Whole Year,Tobacco,11600,14600
+Gujarat,VADODARA,2008,Kharif,Arhar/Tur,75900,83800
+Gujarat,VADODARA,2008,Kharif,Bajra,7900,12700
+Gujarat,VADODARA,2008,Kharif,Castor seed,18200,27900
+Gujarat,VADODARA,2008,Kharif,Cotton(lint),166500,554300
+Gujarat,VADODARA,2008,Kharif,Groundnut,1900,2500
+Gujarat,VADODARA,2008,Kharif,Jowar,1700,2100
+Gujarat,VADODARA,2008,Kharif,Maize,48600,101400
+Gujarat,VADODARA,2008,Kharif,Moong(Green Gram),1600,700
+Gujarat,VADODARA,2008,Kharif,Moth,1200,300
+Gujarat,VADODARA,2008,Kharif,Other Kharif pulses,200,100
+Gujarat,VADODARA,2008,Kharif,Rice,60400,67100
+Gujarat,VADODARA,2008,Kharif,Sesamum,1100,400
+Gujarat,VADODARA,2008,Kharif,Tobacco,8100,8300
+Gujarat,VADODARA,2008,Kharif,Urad,13300,10800
+Gujarat,VADODARA,2008,Rabi,Gram,2700,2700
+Gujarat,VADODARA,2008,Rabi,Jowar,3100,3200
+Gujarat,VADODARA,2008,Rabi,Onion,300,8600
+Gujarat,VADODARA,2008,Rabi,Other  Rabi pulses,300,200
+Gujarat,VADODARA,2008,Rabi,Other Cereals & Millets,5800,7500
+Gujarat,VADODARA,2008,Rabi,Rapeseed &Mustard,200,200
+Gujarat,VADODARA,2008,Rabi,Wheat,24400,55300
+Gujarat,VADODARA,2008,Summer,Bajra,3700,4400
+Gujarat,VADODARA,2008,Summer,Groundnut,14600,26200
+Gujarat,VADODARA,2008,Whole Year,Banana,3100,210600
+Gujarat,VADODARA,2008,Whole Year,Dry chillies,400,300
+Gujarat,VADODARA,2008,Whole Year,Potato,400,7800
+Gujarat,VADODARA,2008,Whole Year,Sugarcane,6600,461000
+Gujarat,VADODARA,2009,Kharif,Arhar/Tur,72400,75200
+Gujarat,VADODARA,2009,Kharif,Bajra,7900,10200
+Gujarat,VADODARA,2009,Kharif,Castor seed,15600,25400
+Gujarat,VADODARA,2009,Kharif,Cotton(lint),162100,556000
+Gujarat,VADODARA,2009,Kharif,Groundnut,1100,1000
+Gujarat,VADODARA,2009,Kharif,Jowar,2000,1600
+Gujarat,VADODARA,2009,Kharif,Maize,47500,69600
+Gujarat,VADODARA,2009,Kharif,Moong(Green Gram),1500,600
+Gujarat,VADODARA,2009,Kharif,Moth,500,200
+Gujarat,VADODARA,2009,Kharif,Other Kharif pulses,100,100
+Gujarat,VADODARA,2009,Kharif,Rice,52500,47700
+Gujarat,VADODARA,2009,Kharif,Sesamum,1100,400
+Gujarat,VADODARA,2009,Kharif,Tobacco,12200,18500
+Gujarat,VADODARA,2009,Kharif,Urad,14100,8900
+Gujarat,VADODARA,2009,Rabi,Gram,2300,2200
+Gujarat,VADODARA,2009,Rabi,Jowar,4700,5100
+Gujarat,VADODARA,2009,Rabi,Onion,400,11200
+Gujarat,VADODARA,2009,Rabi,Rapeseed &Mustard,200,300
+Gujarat,VADODARA,2009,Rabi,Tobacco,12200,18500
+Gujarat,VADODARA,2009,Rabi,Wheat,20100,51500
+Gujarat,VADODARA,2009,Summer,Bajra,3900,8200
+Gujarat,VADODARA,2009,Summer,Groundnut,7200,13400
+Gujarat,VADODARA,2009,Whole Year,Banana,2300,171800
+Gujarat,VADODARA,2009,Whole Year,Dry chillies,700,500
+Gujarat,VADODARA,2009,Whole Year,Guar seed,400,100
+Gujarat,VADODARA,2009,Whole Year,Potato,300,6500
+Gujarat,VADODARA,2009,Whole Year,Sugarcane,5600,404000
+Gujarat,VADODARA,2010,Kharif,Arhar/Tur,78500,83300
+Gujarat,VADODARA,2010,Kharif,Bajra,4800,8000
+Gujarat,VADODARA,2010,Kharif,Castor seed,14800,26100
+Gujarat,VADODARA,2010,Kharif,Cotton(lint),166300,661600
+Gujarat,VADODARA,2010,Kharif,Groundnut,800,1600
+Gujarat,VADODARA,2010,Kharif,Jowar,1600,1700
+Gujarat,VADODARA,2010,Kharif,Maize,43300,85500
+Gujarat,VADODARA,2010,Kharif,Moong(Green Gram),1600,700
+Gujarat,VADODARA,2010,Kharif,Moth,400,200
+Gujarat,VADODARA,2010,Kharif,Other Kharif pulses,200,100
+Gujarat,VADODARA,2010,Kharif,Rice,55100,68100
+Gujarat,VADODARA,2010,Kharif,Sesamum,2700,1100
+Gujarat,VADODARA,2010,Kharif,Soyabean,10100,8000
+Gujarat,VADODARA,2010,Kharif,Tobacco,16400,26700
+Gujarat,VADODARA,2010,Kharif,Urad,12300,11500
+Gujarat,VADODARA,2010,Rabi,Gram,1500,2000
+Gujarat,VADODARA,2010,Rabi,Jowar,3900,3900
+Gujarat,VADODARA,2010,Rabi,Maize,63900,131800
+Gujarat,VADODARA,2010,Rabi,Rapeseed &Mustard,300,500
+Gujarat,VADODARA,2010,Rabi,Wheat,47500,132600
+Gujarat,VADODARA,2010,Summer,Bajra,11300,23900
+Gujarat,VADODARA,2010,Summer,Groundnut,38000,58400
+Gujarat,VADODARA,2010,Summer,Maize,17100,34000
+Gujarat,VADODARA,2010,Summer,Moong(Green Gram),4100,2300
+Gujarat,VADODARA,2010,Summer,Urad,3200,2100
+Gujarat,VADODARA,2010,Whole Year,Banana,1500,97200
+Gujarat,VADODARA,2010,Whole Year,Dry chillies,600,500
+Gujarat,VADODARA,2010,Whole Year,Guar seed,300,200
+Gujarat,VADODARA,2010,Whole Year,Onion,300,8800
+Gujarat,VADODARA,2010,Whole Year,Potato,300,6500
+Gujarat,VADODARA,2010,Whole Year,Sugarcane,7700,470000
+Gujarat,VADODARA,2011,Kharif,Arhar/Tur,75100,88300
+Gujarat,VADODARA,2011,Kharif,Bajra,7000,11700
+Gujarat,VADODARA,2011,Kharif,Castor seed,25000,50600
+Gujarat,VADODARA,2011,Kharif,Cotton(lint),196900,639000
+Gujarat,VADODARA,2011,Kharif,Groundnut,2600,4100
+Gujarat,VADODARA,2011,Kharif,Jowar,1500,1700
+Gujarat,VADODARA,2011,Kharif,Maize,44700,86900
+Gujarat,VADODARA,2011,Kharif,Moong(Green Gram),2100,900
+Gujarat,VADODARA,2011,Kharif,Moth,200,100
+Gujarat,VADODARA,2011,Kharif,Other Cereals & Millets,1100,600
+Gujarat,VADODARA,2011,Kharif,Other Kharif pulses,1100,500
+Gujarat,VADODARA,2011,Kharif,Ragi,400,300
+Gujarat,VADODARA,2011,Kharif,Rice,44400,55300
+Gujarat,VADODARA,2011,Kharif,Sesamum,400,200
+Gujarat,VADODARA,2011,Kharif,Soyabean,8000,7000
+Gujarat,VADODARA,2011,Kharif,Tobacco,15300,27000
+Gujarat,VADODARA,2011,Kharif,Urad,13700,11300
+Gujarat,VADODARA,2011,Rabi,Gram,3600,4100
+Gujarat,VADODARA,2011,Rabi,Jowar,5500,8200
+Gujarat,VADODARA,2011,Rabi,Maize,25500,56000
+Gujarat,VADODARA,2011,Rabi,Onion,300,9900
+Gujarat,VADODARA,2011,Rabi,Other  Rabi pulses,100,100
+Gujarat,VADODARA,2011,Rabi,Other Cereals & Millets,17000,17800
+Gujarat,VADODARA,2011,Rabi,Rapeseed &Mustard,400,700
+Gujarat,VADODARA,2011,Rabi,Wheat,47200,128400
+Gujarat,VADODARA,2011,Summer,Bajra,11300,25200
+Gujarat,VADODARA,2011,Summer,Groundnut,38000,63200
+Gujarat,VADODARA,2011,Summer,Maize,10900,24000
+Gujarat,VADODARA,2011,Summer,Moong(Green Gram),1000,600
+Gujarat,VADODARA,2011,Summer,Urad,100,100
+Gujarat,VADODARA,2011,Whole Year,Banana,2000,133500
+Gujarat,VADODARA,2011,Whole Year,Dry chillies,600,500
+Gujarat,VADODARA,2011,Whole Year,Garlic,100,100
+Gujarat,VADODARA,2011,Whole Year,Guar seed,500,300
+Gujarat,VADODARA,2011,Whole Year,Potato,300,6800
+Gujarat,VADODARA,2011,Whole Year,Sugarcane,7000,317000
+Gujarat,VADODARA,2012,Kharif,Arhar/Tur,64100,80800
+Gujarat,VADODARA,2012,Kharif,Bajra,8400,12100
+Gujarat,VADODARA,2012,Kharif,Castor seed,32500,74600
+Gujarat,VADODARA,2012,Kharif,Cotton(lint),203800,844700
+Gujarat,VADODARA,2012,Kharif,Groundnut,200,100
+Gujarat,VADODARA,2012,Kharif,Jowar,1300,1700
+Gujarat,VADODARA,2012,Kharif,Maize,44100,86600
+Gujarat,VADODARA,2012,Kharif,Moong(Green Gram),1700,700
+Gujarat,VADODARA,2012,Kharif,Moth,300,100
+Gujarat,VADODARA,2012,Kharif,Other Cereals & Millets,3500,1000
+Gujarat,VADODARA,2012,Kharif,Other Kharif pulses,600,300
+Gujarat,VADODARA,2012,Kharif,Ragi,400,400
+Gujarat,VADODARA,2012,Kharif,Rice,44600,63200
+Gujarat,VADODARA,2012,Kharif,Sesamum,700,200
+Gujarat,VADODARA,2012,Kharif,Soyabean,3400,2900
+Gujarat,VADODARA,2012,Kharif,Tobacco,4000,6800
+Gujarat,VADODARA,2012,Kharif,Urad,13200,11100
+Gujarat,VADODARA,2012,Rabi,Gram,1300,1300
+Gujarat,VADODARA,2012,Rabi,Jowar,2800,3200
+Gujarat,VADODARA,2012,Rabi,Maize,24600,62700
+Gujarat,VADODARA,2012,Rabi,Onion,300,8100
+Gujarat,VADODARA,2012,Rabi,Other  Rabi pulses,100,100
+Gujarat,VADODARA,2012,Rabi,Other Cereals & Millets,13500,8900
+Gujarat,VADODARA,2012,Rabi,Rapeseed &Mustard,300,500
+Gujarat,VADODARA,2012,Rabi,Wheat,36500,125000
+Gujarat,VADODARA,2012,Summer,Bajra,4700,19400
+Gujarat,VADODARA,2012,Summer,Groundnut,3000,4200
+Gujarat,VADODARA,2012,Summer,Moong(Green Gram),400,300
+Gujarat,VADODARA,2012,Whole Year,Banana,2600,172500
+Gujarat,VADODARA,2012,Whole Year,Dry chillies,600,500
+Gujarat,VADODARA,2012,Whole Year,Garlic,100,100
+Gujarat,VADODARA,2012,Whole Year,Guar seed,600,400
+Gujarat,VADODARA,2012,Whole Year,Potato,300,7200
+Gujarat,VADODARA,2012,Whole Year,Sugarcane,7400,45200

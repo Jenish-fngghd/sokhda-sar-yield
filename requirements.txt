@@ -1,0 +1,26 @@
+# Tested with Python 3.12.8 on Windows 11 (2026-10-24). Versions are the ones the
+# verification runs used; nearby versions should work but are not guaranteed to
+# reproduce outputs byte for byte.
+numpy==2.4.6
+pandas==2.3.0
+scipy==1.15.3
+matplotlib==3.10.3
+pillow==11.2.1
+rasterio==1.5.0
+geopandas==1.1.4
+pyogrio==0.13.0
+shapely==2.1.1
+pyproj==3.7.2
+pyshp==3.1.4
+scikit-image==0.25.2
+scikit-learn==1.6.1
+openpyxl==3.1.5
+# paper/shap_benchmark only
+shap==0.53.0
+lightgbm==4.5.0
+joblib==1.5.0
+# notebooks
+jupyter
+# phase1_village_crop_area/feature_tables only (Google Earth Engine account needed)
+# earthengine-api==1.7.33
+# geemap==0.38.3

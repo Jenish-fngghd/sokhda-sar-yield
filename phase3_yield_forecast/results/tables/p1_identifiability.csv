@@ -1,0 +1,7 @@
+model,params,df_at_n4,df_at_n6,identifiable_at_n6
+linear,2,2,4,True
+quadratic,3,1,3,True
+asymmetric Gaussian,4,0,2,True
+logistic (single),4,0,2,True
+double logistic,6,-2,0,False
+SAFY (min free set),4,0,2,True

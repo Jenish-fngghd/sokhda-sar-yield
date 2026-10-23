@@ -1,0 +1,4 @@
+test,rho,moved,known_answer,lo,hi,scrambled,nperm
+C1_drop_29oct,1.0,0.0,1.0,,,,
+Q3_calendar_permutation,0.31197224454148853,,,-0.04486134502916124,0.8846999765580918,200.0,200.0
+C3_modifier_renorm_max_dev,3.3306690738754696e-16,,,,,,

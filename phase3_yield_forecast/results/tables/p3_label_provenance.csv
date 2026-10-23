@@ -1,0 +1,7 @@
+team,eta2_raw,eta2_residual,survives_pct,reads_as
+crop_GDHTM,0.2025,0.1122,55.4,SAR-like
+crop_CodingBits,0.2247,0.2058,91.6,optical-informed
+crop_8bit,0.2687,0.2601,96.8,optical-informed
+crop_Megalodon,0.1789,0.1612,90.1,mixed
+crop_Orion,0.1605,0.1162,72.4,SAR-like
+crop_DeepThinkers,0.2231,0.2193,98.3,optical-informed

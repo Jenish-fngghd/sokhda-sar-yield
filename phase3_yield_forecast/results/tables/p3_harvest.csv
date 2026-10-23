@@ -1,0 +1,6 @@
+crop,n,expected_rank,median_harvest_doy,median_harvest_date,mean_drop_db
+Rice,85,1,307.0,03 Nov,-1.585
+Maize,52,1,295.0,22 Oct,-2.191
+Bajra,146,1,295.0,22 Oct,-2.118
+Groundnut,220,2,295.0,22 Oct,-1.667
+Cotton,448,3,307.0,03 Nov,-1.983

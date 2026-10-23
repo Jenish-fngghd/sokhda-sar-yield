@@ -1,0 +1,7 @@
+date,look,farms_with_pixels,farms_no_pixels,farms_below_50pct,median_coverage,median_npix
+20250606,left,937,29,30,1.0,69
+20250619,left,913,53,63,1.0,68
+20250814,left,918,48,55,1.0,69
+20251013,left,925,41,52,1.0,69
+20251029,right,832,134,139,1.0,67
+20251112,left,937,29,30,1.0,69

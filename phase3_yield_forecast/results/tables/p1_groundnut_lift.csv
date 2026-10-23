@@ -1,0 +1,4 @@
+test,n_a,n_b,mean_a,mean_b,diff_db,null_sd,p,effect_size
+PRIMARY groundnut vs cereals,204,253,-3.856,-3.965,0.109,0.132,0.4155,0.82
+CONTROL rice vs maize+bajra,69,184,-3.039,-4.313,1.274,0.217,0.0,5.86
+REFERENCE cotton vs cereals,375,253,-3.793,-3.965,0.173,0.128,0.1792,1.34

@@ -1,0 +1,10 @@
+test,item,pass,detail
+V1,weight drift,True,largest half-to-half drift 0.0322 (uniform); all weights ~0.20 nominal
+V2,west-weights on east,True,rho 0.9997 against the whole-village index (n=483)
+V2,east-weights on west,True,rho 0.9967 against the whole-village index (n=483)
+V3,Cotton 1013,True,west +0.468  east +0.567
+V3,Groundnut 1013,True,west +0.292  east +0.405
+V3,Cotton 1112,True,west +0.467  east +0.597
+V3,Groundnut 1112,True,west +0.313  east +0.496
+V4,glcm 0606,False,out-of-sample residual vs log(npix) rho -0.265 (in-sample it is 0 by construction)
+V4,glcm 1112,False,out-of-sample residual vs log(npix) rho -0.395 (in-sample it is 0 by construction)

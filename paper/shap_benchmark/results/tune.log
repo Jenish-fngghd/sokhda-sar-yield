@@ -1,0 +1,25 @@
+[Parallel(n_jobs=14)]: Using backend LokyBackend with 14 concurrent workers.
+[Parallel(n_jobs=14)]: Done  44 tasks      | elapsed:   32.4s
+[Parallel(n_jobs=14)]: Done 118 out of 120 | elapsed:  2.7min remaining:    2.6s
+[Parallel(n_jobs=14)]: Done 120 out of 120 | elapsed:  2.9min finished
+    target design  noise model  grid                                         params        r2
+2       T1     D1    0.0  lgbm     2      {"num_leaves": 4, "min_child_samples": 5}  0.981492
+15      T1     D1    0.0   mlp     1                                {"alpha": 0.01}  0.988026
+11      T1     D1    0.0    rf     1   {"min_samples_leaf": 1, "max_features": 1.0}  0.914165
+18      T1     D1    0.5  lgbm     2      {"num_leaves": 4, "min_child_samples": 5}  0.768956
+30      T1     D1    0.5   mlp     0                              {"alpha": 0.0001}  0.777024
+27      T1     D1    0.5    rf     1   {"min_samples_leaf": 1, "max_features": 1.0}  0.726325
+32      T1     D2    0.0  lgbm     0      {"num_leaves": 3, "min_child_samples": 5}  0.972499
+46      T1     D2    0.0   mlp     0                              {"alpha": 0.0001}  0.822389
+42      T1     D2    0.0    rf     0  {"min_samples_leaf": 1, "max_features": 0.33}  0.897996
+48      T1     D2    0.5  lgbm     0      {"num_leaves": 3, "min_child_samples": 5}  0.762135
+63      T1     D2    0.5   mlp     1                                {"alpha": 0.01}  0.545392
+58      T1     D2    0.5    rf     0  {"min_samples_leaf": 1, "max_features": 0.33}  0.723221
+66      T2     D1    0.0  lgbm     2      {"num_leaves": 4, "min_child_samples": 5}  0.969342
+75      T2     D1    0.0    rf     1   {"min_samples_leaf": 1, "max_features": 1.0}  0.862797
+80      T2     D1    0.5  lgbm     2      {"num_leaves": 4, "min_child_samples": 5}  0.748115
+89      T2     D1    0.5    rf     1   {"min_samples_leaf": 1, "max_features": 1.0}  0.688060
+94      T2     D2    0.0  lgbm     2      {"num_leaves": 4, "min_child_samples": 5}  0.950124
+103     T2     D2    0.0    rf     1   {"min_samples_leaf": 1, "max_features": 1.0}  0.829900
+110     T2     D2    0.5  lgbm     4      {"num_leaves": 7, "min_child_samples": 5}  0.725368
+116     T2     D2    0.5    rf     0  {"min_samples_leaf": 1, "max_features": 0.33}  0.665169

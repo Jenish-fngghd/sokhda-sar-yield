@@ -1,0 +1,7 @@
+class,pair,fold,a,b,why,n_targets,mean_diff_db,median_diff_db,sd_db,iqr_db,p05_db,p95_db
+built,TEST look-reversed,F1,20251029,20251112,"0.094 deg apart in incidence, 14 days, OPPOSITE look sides",92,-0.053,0.081,1.815,2.191,-3.323,2.37
+built,CTRL same-look A,F3,20250619,20250814,"0.068 deg apart, 56 days, both left -- the tightest same-look incidence match",77,0.377,0.26,1.923,2.336,-2.192,3.331
+built,CTRL same-look B,F1,20251013,20251112,"1.78 deg apart, 30 days, both left -- the tightest same-look TIME match",92,2.198,1.835,1.898,1.893,-0.433,6.09
+water,TEST look-reversed,F1,20251029,20251112,"0.094 deg apart in incidence, 14 days, OPPOSITE look sides",231,2.87,2.815,2.386,3.507,-0.798,6.649
+water,CTRL same-look A,F3,20250619,20250814,"0.068 deg apart, 56 days, both left -- the tightest same-look incidence match",185,0.744,0.633,1.519,1.994,-1.522,3.468
+water,CTRL same-look B,F1,20251013,20251112,"1.78 deg apart, 30 days, both left -- the tightest same-look TIME match",231,0.457,0.478,1.214,1.519,-1.565,2.251

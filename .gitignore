@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+# competition data: download from Kaggle, never commit
+anrf-aise-hack-*/
+Sokhda_Dummy_Submission.xlsx
+# rebuilt rasters and run logs
+results/cache/
+results/log.jsonl
+phase1_village_crop_area/notebook/submission.csv
+_work/

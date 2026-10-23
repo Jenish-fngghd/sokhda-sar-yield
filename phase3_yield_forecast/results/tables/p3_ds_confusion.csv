@@ -1,0 +1,7 @@
+team,mean_diagonal,agrees_with_ds_pct
+crop_GDHTM,0.4165,47.3
+crop_CodingBits,0.3702,53.3
+crop_8bit,0.4656,50.0
+crop_Megalodon,0.4588,65.3
+crop_Orion,0.2985,27.5
+crop_DeepThinkers,0.2518,28.5

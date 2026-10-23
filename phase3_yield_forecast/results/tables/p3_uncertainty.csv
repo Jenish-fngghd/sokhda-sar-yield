@@ -1,0 +1,7 @@
+term,value,unit,note
+sampling (per farm),5.805,health pts,calibrated to 3.4% by split-half; only 15.9% of between-farm signal
+structural / ensemble (per farm),0.0279,t/ha,8 members: leave-one-date-out + weighting variants
+structural / ensemble (village),0.0,t,ZERO BY CONSTRUCTION -- the modifier cannot move the village total
+level: crop label (village),40.7,t (90% width),Monte Carlo over the shipped per-farm label posterior
+level: anchor (village),385.2,t (90% width),"MC over independent published anchors, widened for Cotton/Maize/Groundnut to the district's measured interannual 1-sd envelope (their source spread failed the calibration control against Vadodara APY 1997-2012)"
+level: both (village),320.0,t (90% width),both together
