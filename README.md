@@ -21,11 +21,10 @@ The work was developed by Team GDHTM within ANRF AISEHack 2.0 (Remote Sensing tr
 6. [Reproducing the Results](#6-reproducing-the-results)
 7. [Paper Section to Code](#7-paper-section-to-code)
 8. [Configuration](#8-configuration)
-9. [Troubleshooting](#9-troubleshooting)
-10. [Limitations](#10-limitations)
-11. [Citation](#11-citation)
-12. [License](#12-license)
-13. [Acknowledgements](#13-acknowledgements)
+9. [Limitations](#9-limitations)
+10. [Citation](#10-citation)
+11. [License](#11-license)
+12. [Acknowledgements](#12-acknowledgements)
 
 ---
 
@@ -242,20 +241,7 @@ The phase READMEs give the full sequences.
 
 ---
 
-## 9. Troubleshooting
-
-| Symptom | Resolution |
-|:--|:--|
-| `FileNotFoundError: no SLCs under ...` | Phase 3 and the benchmark require the Phase 3 scene files; set `AISE_DATA` |
-| `Neither Sokhda_Farms.dbf nor Sokhda_Farms.shp could be opened` | Phase 2 requires its shapefiles; set `AISE_DATA` to the Phase 2 download |
-| CRS or `pyproj` errors on Windows | A `PROJ_LIB` value from another GDAL installation; `common.py` clears it, so keep that line before any `rasterio` import |
-| `HTTP Error 504` | A remote data service was busy; re-run the script |
-| `RuntimeWarning: ... invalid winding order` | Harmless; the shapefile is corrected on read |
-| Out of memory in the benchmark | Lower `NJOBS` |
-
----
-
-## 10. Limitations
+## 9. Limitations
 
 - **No ground truth:** no plot-level truth exists for crop type, health or yield, so plot-level accuracy is not claimed.
 - **Scope:** one village, one season, one polarisation.
@@ -273,19 +259,19 @@ The phase READMEs give the full sequences.
 
 ---
 
-## 11. Citation
+## 10. Citation
 
 If you use this code or its outputs, please cite the accompanying paper. The full reference will be added on publication.
 
 ---
 
-## 12. License
+## 11. License
 
 The code and its outputs are released under the [MIT License](LICENSE). The competition data, the third-party tables and the open datasets remain under their own terms (see `LICENSE`).
 
 ---
 
-## 13. Acknowledgements
+## 12. Acknowledgements
 
 **Team GDHTM:** Yash Sorathiya, Jenish Sorathiya, Yajurshi Velani, Mahi Parmar, Aayush Pandya.
 
